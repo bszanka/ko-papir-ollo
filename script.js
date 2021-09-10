@@ -127,13 +127,24 @@ function randomNumber() {
     return Math.floor(Math.random() * 3);
 }
 
-function play(element,player) {
-    var enemy = randomNumber()*1;
-    alert(element.value*1 + " vs " + enemy)
-    if(element.value*1 == enemy*1)
+function play(playersValue) {
+    var player = playersValue * 1;
+    var enemy = randomNumber() * 1;
+    // alert(player + " vs " + enemy)
+    if (player == enemy){
         alert("tie!");
-    else if(element.value*1 < enemy*1)
-        alert("win!" + element.value*1 + " vs " + enemy*1);
-    else if(element.value*1 > enemy*1)
-        alert("lose!");
+        document.stats.ties.value++;
+    }
+    else {
+        if (player == 0 && enemy == 2
+            || player == 1 && enemy == 0
+            || player == 2 && enemy == 1){
+            alert("win!");
+            document.stats.wins.value++;
+        }
+        else{
+            alert("lose!");
+            document.stats.loses.value++;
+        }
+    }
 }
