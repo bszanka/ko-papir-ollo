@@ -7,26 +7,31 @@
 
 <!-- <!DOCTYPE html> -->
 <html>
-
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
 <body>
 
   <h1>Kő-Papír-Olló játék</h1>
   <script type="text/JavaScript" src="script.js"></script>
   <!--
-  * 0 - stone
+  * 0 - rock
   * 1 - paper
   * 2 - scissors
   -->
-  <button type="button" value="0" onclick=play(this.value)>Kő</button>
-  <button type="button" value="1" onclick=play(this.value)>Papír</button>
-  <button type="button" value="2" onclick=play(this.value)>Olló</button>
+  <input type="image" src="images/rock.png" value="0" onclick=play(this.value)></input>
+  <input type="image" src="images/paper.png" value="1" onclick=play(this.value)></input>
+  <input type="image" src="images/scissors.png" value="2" onclick=play(this.value)></input>
   </br>
   <h2>
-    Statistics
+    Statisztika
   </h2>
   <form name="stats">
+    Nyert
     <input type="text" name="wins" size="16" value="0">
+    Döntetlen
     <input type="text" name="ties" size="16" value="0">
+    Vesztett
     <input type="text" name="loses" size="16" value="0">
   </form>
 </body>
